@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_javascript_hmr_mode %}
+    {{ parent() }}
+
+    {% set weglotConfig = config('NetzkollektivWeglot.config') %}
+    
+    {% if weglotConfig.enabled and weglotConfig.apiKey %}
+        <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+        <script>
+            (function() {
+                var config = {
+                    api_key: '{{ weglotConfig.apiKey }}'
+                };
+                
+                {% if weglotConfig.jsonConfig %}
+                    var jsonConfig = null;
+                    try {
+                        jsonConfig = JSON.parse('{{ weglotConfig.jsonConfig|escape('js') }}');
+                    } catch (e) {
+                        console.error('Weglot: Invalid JSON configuration', e);
+                    }
+                    
+                    if (jsonConfig) {
+                        Object.assign(config, jsonConfig);
+                    }
+                {% endif %}
+                
+                Weglot.initialize(config);
+            })();
+        </script>
+    {% endif %}
+{% endblock %}

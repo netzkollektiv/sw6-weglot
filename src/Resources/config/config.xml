@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Weglot Configuration</title>
+
+        <input-field type="bool">
+            <name>enabled</name>
+            <label>Enable Weglot</label>
+            <defaultValue>false</defaultValue>
+            <label lang="de-DE">Weglot aktivieren</label>
+        </input-field>
+
+        <input-field type="text">
+            <name>apiKey</name>
+            <label>API Key</label>
+            <helpText>Enter your Weglot API key</helpText>
+            <label lang="de-DE">API-Schlüssel</label>
+            <helpText lang="de-DE">Geben Sie Ihren Weglot API-Schlüssel ein</helpText>
+        </input-field>
+
+        <input-field type="textarea">
+            <name>jsonConfig</name>
+            <label>JSON Configuration</label>
+            <helpText>Enter additional JSON configuration for Weglot initialization. This will be merged with the API key.</helpText>
+            <label lang="de-DE">JSON-Konfiguration</label>
+            <helpText lang="de-DE">Geben Sie zusätzliche JSON-Konfiguration für die Weglot-Initialisierung ein. Diese wird mit dem API-Schlüssel zusammengeführt.</helpText>
+        </input-field>
+    </card>
+
+</config>

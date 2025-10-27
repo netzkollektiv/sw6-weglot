@@ -1,0 +1,27 @@
+{
+    "name": "netzkollektiv/weglot",
+    "description": "A very basic Weglot integration for Shopware 6. This plugin provides a minimal but functional setup to integrate Weglot Translation Service with configurable API key, enable/disable toggle, and custom JSON configuration options.",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "license": "MIT",
+    "require": {
+        "shopware/core": "^6.5 | ^6.6"
+    },
+    "extra": {
+        "shopware-plugin-class": "Netzkollektiv\\Weglot\\NetzkollektivWeglot",
+        "label": {
+            "de-DE": "Weglot Integration (Basic)",
+            "en-GB": "Weglot Integration (Basic)"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Netzkollektiv\\Weglot\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Netzkollektiv\\Weglot\\Tests\\": "tests/"
+        }
+    }
+}
